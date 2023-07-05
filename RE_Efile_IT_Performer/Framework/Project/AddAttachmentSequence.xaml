@@ -1,0 +1,207 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="AddAttachmentSequence" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="in_UiElementOutput" Type="InArgument(ui:UiElement)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>567.3333333333334,1576.6666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Windows.Forms</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>WindowsFormsIntegration</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="546,1512" sap2010:WorkflowViewState.IdRef="Sequence_45">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="484,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Add json attachment for the process&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Add AttachmentUse Application:" sap:VirtualizedContainerService.HintSize="484,1216.6666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" InUiElement="[in_UiElementOutput]" ScopeGuid="c9e038a9-c366-46e0-8030-ccd197fb38b0" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Add Attachment Do" sap:VirtualizedContainerService.HintSize="450,1077.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_44">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="0.3" DelayBefore="0.3" DisplayName="Add Attachment Click 'Attach File'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c9e038a9-c366-46e0-8030-ccd197fb38b0" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable CvElementArea="134, 583, 195, 56" CvTextArea="191, 600, 105, 21" CvTextArgument="Attach File" CvType="Button" DesignTimeRectangle="134, 584, 193, 55" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'Attach File'" FullSelectorArgument="&lt;ctrl name='e-Filing, Income Tax Department, Government of India' role='document' /&gt;&lt;ctrl name='Attach File' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='e-Filing, Income Tax Department, Government of India' role='document' /&gt;&lt;ctrl name='Attach File' role='push button' automationid='' check:text='Attach File' /&gt;" Guid="e17ea932-b7b0-4e46-9f66-985379b6ffa1" ImageBase64="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" InformativeScreenshot="f58495e88dfc8049266ffe3b1629db94.png" ScopeSelectorArgument="&lt;wnd app='itde-filing-2023.exe' cls='Chrome_WidgetWin_1' title='e-Filing, Income Tax Department, Government of India' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvElementArea="95, 720, 161, 75" CvTextArea="161, 747, 55, 21" CvTextArgument="Back" CvType="Button" DesignTimeRectangle="97, 724, 156, 69" ElementType="Button" FriendlyName="'Back'" FullSelectorArgument="&lt;ctrl name='e-Filing, Income Tax Department, Government of India' role='document' /&gt;&lt;ctrl name='Back' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='e-Filing, Income Tax Department, Government of India' role='document' /&gt;&lt;ctrl name='Back' role='push button' automationid='' check:text='Back' /&gt;" ImageBase64="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" SearchSteps="Selector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NSetText DelayAfter="0.3" DelayBefore="0.3" DisplayName="Add Attachment Set Text 'Edit'" sap:VirtualizedContainerService.HintSize="388,164" sap2010:WorkflowViewState.IdRef="NSetText_3" ScopeIdentifier="c9e038a9-c366-46e0-8030-ccd197fb38b0" Text="[in_Config(&quot;Json_Folder&quot;).ToString()+in_TransactionItem.SpecificContent(&quot;FileName&quot;).ToString()]" Version="V3">
+              <uix:NSetText.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="287, 615, 307, 25" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'Edit'" FullSelectorArgument="&lt;wnd ctrlid='1148' /&gt;&lt;wnd ctrlid='1148' /&gt;&lt;wnd ctrlid='1148' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1148' /&gt;&lt;wnd ctrlid='1148' /&gt;&lt;wnd ctrlid='1148' /&gt;" Guid="dfb4ef50-f822-4c54-a2fb-2b018603b5c8" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAATcAAAAdCAYAAADPYivWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAB3SURBVHhe7dRBEQAwEAOh8286/VXEDojgBhAkNyDp53bnOaBDbkCS3IAkuQFJcgOS5AYkyQ1IkhuQJDcgSW5AktyAJLkBSXIDkuQGJMkNSJIbkCQ3IEluQJLcgCS5AUlyA5LkBiTJDUiSG5AkNyDJaECS3ICg7QE2sxyUFKbuhQAAAABJRU5ErkJggg==" InformativeScreenshot="3ba18c3924c65cd821c03a5469ad4a35.png" ScopeSelectorArgument="&lt;wnd app='itde-filing-2023.exe' cls='#32770' title='Open' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="641, 652, 132, 39" ElementType="Button" FriendlyName="'&amp;Open'" FullSelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Open' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Open' check:text='&amp;amp;Open' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIgAAAArCAYAAACjMsASAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAG6SURBVHhe7djBmYMgEEBhe7IbK9mbrdiKVezZDuyAXQWVgWGWTS4G3+E/oMYceB+QdOu6OqCEQGAiEJhEIN3XN0AgsIkmxCA8sCwLHohAYCIQmAgEJgKBiUBgIhCYCAQmAoGJQGAiEJiaDmQaOtd1iWFSn4WuzUDm0fV7EIObxL3Zjf12vXfjHF9HSYOBTG74Y6XwK0saDzTNBTKPfcXk+4j6cVbuIdZYIGELqThn7KtIP7o5jK+wjm3oMkz5569tLIjetTnfnzz3aVE2Fkj9ypCuNH68TaI8nxzXRSRh0q/vycM8D8hxONOQv+vm2gokTFzNBJQC0T4rV5vCKrVP/hWXDyQ9DNevcHfRZCCvryD62UXcK0WYXE+3sEPp+l21FUjFL5hDOlH/DcRvRzkCubl9AgoTfcnPKm+vIAkCua3X/gfxEWh/oKXnhrpzBIHc2bENZBMRJlcJwQey3ZPhaDHpv0Z+w4y+j0A+gJ9cqXSAPbeR7IyRxHEIkcTiYAikMdYZ5MkIJCAQHYEEBKIjkIBAdAQCE4HARCAwEQhMBAJTdSB4NtGEGCgP43lEE/EASBEITAQCw+p+AEwW3D+Ci8k6AAAAAElFTkSuQmCC" SearchSteps="Selector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NSetText.Target>
+            </uix:NSetText>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="0.3" DelayBefore="0.3" DisplayName="Add Attachment Click 'unchecked'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_14" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c9e038a9-c366-46e0-8030-ccd197fb38b0" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="641, 652, 132, 39" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'unchecked'" FullSelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Open' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Open' check:text='unchecked' /&gt;" Guid="f3ed6e6f-58a4-4c45-9672-6b539ac81a70" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIgAAAArCAYAAACjMsASAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAG6SURBVHhe7djBmYMgEEBhe7IbK9mbrdiKVezZDuyAXQWVgWGWTS4G3+E/oMYceB+QdOu6OqCEQGAiEJhEIN3XN0AgsIkmxCA8sCwLHohAYCIQmAgEJgKBiUBgIhCYCAQmAoGJQGAiEJiaDmQaOtd1iWFSn4WuzUDm0fV7EIObxL3Zjf12vXfjHF9HSYOBTG74Y6XwK0saDzTNBTKPfcXk+4j6cVbuIdZYIGELqThn7KtIP7o5jK+wjm3oMkz5569tLIjetTnfnzz3aVE2Fkj9ypCuNH68TaI8nxzXRSRh0q/vycM8D8hxONOQv+vm2gokTFzNBJQC0T4rV5vCKrVP/hWXDyQ9DNevcHfRZCCvryD62UXcK0WYXE+3sEPp+l21FUjFL5hDOlH/DcRvRzkCubl9AgoTfcnPKm+vIAkCua3X/gfxEWh/oKXnhrpzBIHc2bENZBMRJlcJwQey3ZPhaDHpv0Z+w4y+j0A+gJ9cqXSAPbeR7IyRxHEIkcTiYAikMdYZ5MkIJCAQHYEEBKIjkIBAdAQCE4HARCAwEQhMBAJTdSB4NtGEGCgP43lEE/EASBEITAQCw+p+AEwW3D+Ci8k6AAAAAElFTkSuQmCC" InformativeScreenshot="b05ea0b9ec6613686c2b767954d201ad.png" ScopeSelectorArgument="&lt;wnd app='itde-filing-2023.exe' cls='#32770' title='Open' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="791, 652, 132, 39" ElementType="Button" FriendlyName="'Cancel'" FullSelectorArgument="&lt;wnd ctrlid='2' title='Cancel' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='2' title='Cancel' check:text='Cancel' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIgAAAArCAYAAACjMsASAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAHESURBVHhe7djRlYIwEEBReqKbNEMracAiKIUO6CCLIXGTIRlg94Cg7+N+SAA9zjuANuM4OqCGQKAiEKiyQB6PB6AHMgwDvhiBQEUgUBEIVAQCFYFARSBQEQhUBAIVgUBFIFARyJtY07im7VxfWLuSjwmk71rXNNOXnmld15f3fzcCOY11xsdgnBVr1hDIf908kBCHsYW1ayOQE8y3leWV4w4I5HC969o9V4+wf/qMIo59Da3vXJvs13Z9tt9s5XziHDIGAjlaGEB5eAXWiH3n21O6zQ9NDnM67rnN2HjcJA4/C2w6X3y9+GzLmAnkaGEI2eB2kkOaA5EPtnuHW7my+dB+z00gR/tTIIXbggykMLR8+3zlqb5v7XOJ7QRyuOUtQuMHIvaXQ9oUyFqYYT2LMEEgJ9r8JVeGemQg1fWAQM4QhrF6FSkOLdxu9gZSe8Z4WVufEchZwq+M8mDjQ+HyDzU/IHHctkAm8T2zCJJfMaVfPs/1De91NfcPxCs8fHrJn2jhKhLXnlcdOaTNgXghukQWRIyosk4g+AgEAhWBQEUgUBEIVAQCFYFARSBQEQhUBALVaiBA2kQWCCARCFQEAsXofgBYqkkuQi6XKQAAAABJRU5ErkJggg==" SearchSteps="Selector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DelayAfter="0.5" DelayBefore="2" DisplayName="Click 'itde-filing-2023.exe e-…'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_16" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c9e038a9-c366-46e0-8030-ccd197fb38b0" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable CvElementArea="1210, 693, 130, 59" CvTextArea="1255, 711, 39, 21" CvTextArgument="Yes" CvType="Button" DesignTimeRectangle="1210, 696, 130, 56" DesignTimeScaleFactor="1.5" FriendlyName="'itde-filing-2023.exe e-…'" Guid="5172287f-2df6-4ea3-9f3b-9863ebce3201" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIIAAAA4CAYAAAAxUiDuAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAUDSURBVHhe7Z3ba1xVFIfn7xHsmy9CBcEXq2KfWiv2SXwQRBAUFbTUWxQxabFC2zSUpGptQbChtiUxVrHNpcnk1tyT6aST62QymdzvSZfzrekZz0xOEN88e9aGDzJnr3Py8PudtdbeDHsimfk1gbnMqpKeW5HZ9LJ8W3lXDh+vkQPPnJInni43HAAt0RRt0RitPd3VCPohezE9tyxdPRMaHPQgwx3QGK3RHO0jniNwyExqMRtQHXij4R5ojeZor0bAFVw4fe6vwBsMd0FztI9QJ1KzSzKdzMjLr1k2KDXQHO0jpIXkzIJMTM5aY1iCoDnaR7xskBhLBgYa7oP2EerD5NScjI5OBQYZ7oP2agRSw4P4RGCQ4T5oH6E/GJ9ISSw2HhhkuA/aqxHGxlMyEhsLDDLcB+3NCEahEYZHzAilCtqbEQwzgpHDjGAoZgRDMSMYihnBUJwwwvW6ftndfSSMaFfwNnnZqduytr6lMeNTC3LsjcuBcaWKE0ZA1MnpRRV5aXlDTnxVXzD/1HNnpKN7Uue3t3el+qdowbzhUGm4/HOn7DzOCs1tiYK5z75pkNW1XDaIJzJy6OjFgnnDISO89Gq1PBzLqNiLS+vy3skb+TnKBWNra0fOXmwuuM/I4YwRgJRP6mf82fhAr/mzwVBsdk82+LisTq/v7OTu28yahc9c98dRXmquRCWVXslnnv1iw4hTRkBkhGF4WYEywVjf2JaKs3cK4s/XtMjG5rbOFw96jU++/i0fe+1mX94AmGZ9fVse5T7uiQ0jThkBSP2UAESiQcQQjN6BpL7VXty7J36VhcXcXPzhnLz9Ya3Of1fVpMIy+odm9No7H13Px8ZG0/kVR9UPrXkj9Q3O5J8dRpwzAsIhun+wbGT56I+7UT+gZmHu8/LfC+ZuNgzqfRiCrPLBp7dkZXVTr2Euz1BkoEtX26X2Vp9UXrpX8Iyw4ZwRgBJAKfCGXzwP3uB/G/QAZy40quCDI6nHV3MG6emf1pXKkdd/LHhuWHHSCIje1TulogW98UCKZ1D3aSZ544uZX1iX0+fuajzloKk1oWXHP7i/s2dKVy3F/yNMOGkE8JpEBCW1F897TSW1nx6geH4/EJyMgym8voFRvHcRNkrWCLfvxHSerWlWBMXz/mUmDeRQtjSQZWgqveuYYmxiXp+TnFmS429eyc+FjZI1AtvQ3uqAfuLqL93y7OFKFZfmj3JR/8ewlpmq71t1f4LmsiWa0Die8db713RfgRH2HcuSNQLQ7O23j+AXHTNQCrx9A/oCeg/vM89gTyLof4SFkjYCeDuLrBAYiMxbzi6if6XB30E7iyPxtHxRUbg0DSPOGsH4b5gRDMWMYChmBEMxIxiKGcFQzAiGYkYwFDOCoZgRDMWMYChmBEMxIxiKGcFQCozAgUoHDtoRvKUGmu85Ve3FY1WBwYa7oHneCN6Bm2Xl+3+Jw3ATNNcDN/1H8Pb1xeSFVy4E3mC4B1qjuR7B6z+Ue2AwLnUNUTl0NPcFTcNd0Bit0VwP5fYf0z88kpCe3mFpb++Rk1/WyvNHzsuTBysCH2SED7REU7RFY7RGcz2m3//DHfHRyaxDRqX7/qAG3mvtkuaWDmlqjkpjE7T9Q6Pxv8avVVY7NERLNEVbNEZrNNcf7vD/lA+rB+oFAbils6tf2jt6JZq9sS16X9rauqXVCBVohnZoiJZoirZojNZoPp3MyN8ijPopQbq0KgAAAABJRU5ErkJggg==" InformativeScreenshot="f3c6f0304e7e638973cc8d6e07854476.png" ScopeSelectorArgument="&lt;wnd app='itde-filing-2023.exe' cls='Chrome_WidgetWin_1' title='e-Filing, Income Tax Department, Government of India' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArgument="i" CvType="Text" DesignTimeRectangle="868, 317, 106, 84" FriendlyName="'itde-filing-2023.exe e-…'" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGoAAABUCAYAAABqUaJKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAASiSURBVHhe7Zy7TiRBDEX3a0nhGyAlhRRSUkj5hyElJSYl7tUZUavWyOUeaJerXOsjXWk0D9fjdrvcr/mzJCFIo4KQRgUhjQpCGhWENCoIaVQQpjHq4+NjeXl5Oer+/n65vb1dbm5ulouLi6N4zXt8Vr7Hb6IQ1qivr6/l7e1teXx8XK6urv4Z8lPxW2IQi5ijEs4o9gL2CmnSLUTsEfe0MEZ9fn4et3xpcluItmhzFIY3inTkadCpaHuElDi0UYfDYdf6YyX68P7+/t2rPgxr1Ovrqzhpmu7u7pbn5+fjpKL1WsNr3sN8vsN3pRia6FMvhjTq3FR3eXm5PDw8HCf/t/BbYhBLauNU9K0HQxnFWrA+9qmJSWWvsFw7iEXMcwyjj97r1lBGnWMSW3/LSaLSow2p7bXoqyfDGLWV7tjSPY9vaGtr7/JMg0MYtVU4XF9fu6caoE3alvpU5FVgdDeKxVyagCLSUE8waysVepTuXY1iErTjpN4mrdHMYgyt9/iuRmmDJ+WMxFYafHp6+v5mG7oZRXUlDRixiO/dQqW4aA/0SSswWp4b7GaUtjdZVHdSXLQX+ibFRS1TdRejPAYrxUYWaBtZq72qi1G182wWKa8gxUcWYEYtBTK2FrgbhRHSABGncKyQ4iMr6KsUH1ltbGvcjaodN1nuTSC1gazQCos9J4lruBtVy+8tF+JWeI7F3ajaAW6LrbA1tezAGK1xNUqr9iKirbcWhxhrXI2qLcCtKiUPahWsZWEEQxhlPShPvMbkahR3qkqD6n3jyB5q65R1lpjWKKkdZA19l9phrJa4GlW71G698ILUDrKmViBZX6p3NUoaEGqB1A5qgdQOsiSNMkBqB1nialTtwtuMqc/6wmcWEzuZspiY0agpy3PPA16pHWTNlAe8tUG1OIUktYOsmfIUUi2fI2ukNpAl056UBa+LbVIbyJLa+sQYrXE3yutim9QGsmTqC4faxbZol+I9L4K6G6XldcsFWIqPrKgVRshygyu4GwW1Sokt1Oq+OCk+skC7y7dFBQtdjKqddkFW+V2KjSyorU1oqhswQRusRWkrxUV78djIJLoZpaUPi8JCiov2QJ9rBQRqtTdBN6NA26t6PNCsQV+0Z4ynfewGGHztABj1+qsACe0ZY+u7fCW6GgXaaSXEBPXcs2h760HwFmf/T+luFGw9bN0rDbLmaOkO/TcPWxe09QqxiFuf6NSgLa1wQC2rvFOGMQq2/ioAkYZaVlfE3kp1yPsZ46GMIr2dYxZbOn81apkOiUVMqb1T0UfvVDyUUYWtNFiEYWz9v/2bUX7z07879Ux3a4Y0CrYKDEnlj32ZfCqx9ZrGa97jM77zm7879SocJIY1CphY7TjLS/TBowTXGNooID1x1C9NoIdo23s9khjeqALV2Llrl4Voq2V1+VPCGFVg8mrXsyxE7JEMKoQzqkA64pI3W/6edYzfEoNYI6S4GmGNOoWqjsvjiL2Cu3LXx2S85j0+K9/zPNOxl2mMmp00KghpVBDSqCCkUUFIo4KQRgUhjQpCGhWENCoIaVQQ0qggpFFBSKOCkEYFIY0KQhoVgmX5C4ERgv498lKRAAAAAElFTkSuQmCC" SearchSteps="Image" TargetType="ImageBased" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="0.3" DelayBefore="0.3" DisplayName="Click 'Proceed'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_15" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c9e038a9-c366-46e0-8030-ccd197fb38b0" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable CvElementArea="1031, 773, 192, 74" CvTextArea="1067, 798, 93, 24" CvTextArgument="Proceed" CvType="Button" DesignTimeRectangle="1033, 776, 189, 70" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'Proceed'" FullSelectorArgument="&lt;ctrl name='e-Filing, Income Tax Department, Government of India' role='document' /&gt;&lt;ctrl name='Proceed' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='e-Filing, Income Tax Department, Government of India' role='document' /&gt;&lt;ctrl name='Proceed' role='push button' automationid='' check:text='Proceed' /&gt;" Guid="c354aa5f-d52d-4426-9462-d5405efbea19" ImageBase64="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" InformativeScreenshot="7bd75ae9ecb1b8978383603bd7723c83.png" ScopeSelectorArgument="&lt;wnd app='itde-filing-2023.exe' cls='Chrome_WidgetWin_1' title='e-Filing, Income Tax Department, Government of India' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvElementArea="95, 774, 161, 74" CvTextArea="161, 799, 55, 22" CvTextArgument="Back" CvType="Button" DesignTimeRectangle="97, 776, 156, 70" ElementType="Button" FriendlyName="'Back'" FullSelectorArgument="&lt;ctrl name='e-Filing, Income Tax Department, Government of India' role='document' /&gt;&lt;ctrl name='Back' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='e-Filing, Income Tax Department, Government of India' role='document' /&gt;&lt;ctrl name='Back' role='push button' automationid='' check:text='Back' /&gt;" ImageBase64="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" SearchSteps="Selector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 1920, 1020" FilePath="C:\Users\prashanth.venkatesan\AppData\Local\Programs\ITDe-Filing-2023\itde-filing-2023.exe" IconBase64="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" InformativeScreenshot="99ea2a1b4d806c7d169f59c8e63250ca.png" Selector="&lt;wnd app='itde-filing-2023.exe' cls='Chrome_WidgetWin_1' title='e-Filing, Income Tax Department, Government of India' /&gt;" Title="e-Filing, Income Tax Department, Government of India" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

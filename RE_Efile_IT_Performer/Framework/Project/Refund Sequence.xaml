@@ -1,0 +1,232 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Refund_Sequence" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="in_UiElementOutput" Type="InArgument(ui:UiElement)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>582,1418</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Windows.Forms</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>WindowsFormsIntegration</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Refund " sap:VirtualizedContainerService.HintSize="592,1353.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_66">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Refund  Log Message" sap:VirtualizedContainerService.HintSize="530,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Entering Refund page..&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Refund  Use Application/Browser" sap:VirtualizedContainerService.HintSize="530,873.3333333333334" sap2010:WorkflowViewState.IdRef="NApplicationCard_11" InUiElement="[in_UiElementOutput]" IsIncognito="{x:Null}" OpenMode="{x:Null}" OutUiElement="{x:Null}" ScopeGuid="11521f4c-1821-4d99-b655-8d7060e00c15" Timeout="{x:Null}" UserDataFolderMode="{x:Null}" UserDataFolderPath="{x:Null}" Version="V2" WebDriverMode="{x:Null}">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Refund Do In Sequence" sap:VirtualizedContainerService.HintSize="496,734" sap2010:WorkflowViewState.IdRef="Sequence_67">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="ITRefund" />
+              <Variable x:TypeArguments="x:Int32" Name="IntRefund" />
+              <Variable x:TypeArguments="x:Int32" Name="CheckRefund" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NMouseScroll ContinueOnError="{x:Null}" CursorMotionType="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Direction="Down" DisplayName="Mouse Scroll Refund " sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="NMouseScroll_5" InScope="{x:Null}" InUiElement="{x:Null}" InteractionMode="HardwareEvents" KeyModifiers="{x:Null}" MovementUnits="7" OutUiElement="{x:Null}" ScopeIdentifier="11521f4c-1821-4d99-b655-8d7060e00c15" Timeout="{x:Null}" Version="V3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NMouseScroll>
+            <uix:NGetText ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Get Text '₹ 30,050'" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="NGetText_7" InScope="{x:Null}" InUiElement="{x:Null}" OutUiElement="{x:Null}" ScopeIdentifier="11521f4c-1821-4d99-b655-8d7060e00c15" ScrapingOptions="{x:Null}" TextString="[ITRefund]" Timeout="{x:Null}" Version="V3" WordsInfo="{x:Null}">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable CvElementArea="83, 591, 1740, 127" CvTextArea="1668, 617, 118, 30" CvTextArgument="R 30,050" CvType="InputBox" DesignTimeRectangle="1445, 614, 342, 40" DesignTimeScaleFactor="1.5" FriendlyName="'₹ 30,050'" FullSelectorArgument="&lt;ctrl name='ITR2 Part B - TTI' role='document' /&gt;&lt;ctrl role='DIV' aastate='opaque' idx='68' /&gt;" FuzzySelectorArgument="&lt;ctrl name='ITR2 Part B - TTI' role='document' /&gt;&lt;ctrl role='DIV' aastate='opaque' automationid='' /&gt;" Guid="a7ec52c0-6317-46bd-a580-5ae4722c9fb0" ImageBase64="" InformativeScreenshot="54b2df96437dbcf33d8c8ff079602bba.png" ScopeSelectorArgument="&lt;wnd app='itde-filing-2023.exe' cls='Chrome_WidgetWin_1' title='ITR2 Part B - TTI' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvElementArea="83, 591, 1740, 127" CvTextArea="140, 623, 145, 28" CvTextArgument="17. Refund" CvType="InputBox" DesignTimeRectangle="140, 614, 290, 46" ElementType="InputBox" FriendlyName="'17. Refund'" FullSelectorArgument="&lt;ctrl name='ITR2 Part B - TTI' role='document' /&gt;&lt;ctrl role='editable text' text='17. Refund' /&gt;" FuzzySelectorArgument="&lt;ctrl name='ITR2 Part B - TTI' role='document' /&gt;&lt;ctrl role='editable text' text='17. Refund' automationid='' /&gt;" ImageBase64="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" SearchSteps="Selector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NGetText.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NGetText>
+            <Assign DisplayName="Refund  String Assign" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_49">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[ITRefund]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(ITRefund, "[,₹]", "")]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Refund  Int Assign" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_50">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[IntRefund]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">[CInt(ITRefund)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Refund Check Assign" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_51">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[CheckRefund]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">[Math.Abs(CInt(in_TransactionItem.SpecificContent("Refund").ToString()))-Math.Abs(IntRefund)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <If Condition="[Math.Abs(CheckRefund)&gt;10]" DisplayName="Refund If" sap:VirtualizedContainerService.HintSize="510,673.3333333333334" sap2010:WorkflowViewState.IdRef="If_18">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="476,489.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_59">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="Status Assign" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_52">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Object">[in_TransactionItem.SpecificContent("Status")]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Object">["Refund amount Mismatch"]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:LogMessage DisplayName="Refund Mismatch Log Message" sap:VirtualizedContainerService.HintSize="434,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[&quot;Refund amount Mismatch&quot;]" />
+                  <Throw DisplayName="Refund  Throw" Exception="[New BusinessRuleException(&quot;Refund amount Mismatch&quot;)]" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="300,81.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_60">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <ui:LogMessage DisplayName="Refund Page Completed Log Message" sap:VirtualizedContainerService.HintSize="334,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Completed Refund page validation&quot;]" />
+  </Sequence>
+</Activity>

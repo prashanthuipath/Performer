@@ -1,0 +1,245 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Tax_Liability_Sequence" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="in_UiElementOutput" Type="InArgument(ui:UiElement)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>582,1327.3333333333333</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Windows.Forms</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>WindowsFormsIntegration</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="TaxLiability Sequence" sap:VirtualizedContainerService.HintSize="592,1262.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_65">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="TaxLiability  Log Message" sap:VirtualizedContainerService.HintSize="530,54" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Entering taxliability page&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="TaxLiability  Use Application/Browser" sap:VirtualizedContainerService.HintSize="530,873.3333333333334" sap2010:WorkflowViewState.IdRef="NApplicationCard_10" InUiElement="[in_UiElementOutput]" ScopeGuid="366a74a8-1804-48c0-aa94-bdbdfbe9b388" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="TaxLiability  Do" sap:VirtualizedContainerService.HintSize="496,734" sap2010:WorkflowViewState.IdRef="Sequence_64">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="ITTaxLiability" />
+              <Variable x:TypeArguments="x:Int32" Name="IntTaxLiability" />
+              <Variable x:TypeArguments="x:Int32" Name="CheckTaxLiability" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NMouseScroll KeyModifiers="{x:Null}" DelayAfter="0.3" DelayBefore="1" Direction="Down" DisplayName="TaxLiability  Mouse Scroll" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="NMouseScroll_4" InteractionMode="HardwareEvents" MovementUnits="4" ScopeIdentifier="366a74a8-1804-48c0-aa94-bdbdfbe9b388" Version="V3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NMouseScroll>
+            <uix:NGetText DelayAfter="0.5" DelayBefore="0.5" DisplayName="Get Text '₹ 0'" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="NGetText_6" ScopeIdentifier="366a74a8-1804-48c0-aa94-bdbdfbe9b388" TextString="[ITTaxLiability]" Version="V3">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable CvType="AnyWordGroup" DesignTimeRectangle="1507, 694, 274, 40" DesignTimeScaleFactor="1.5" FriendlyName="'₹ 0'" FullSelectorArgument="&lt;ctrl name='ITR2 Part B - TTI' role='document' /&gt;&lt;ctrl idx='86' role='DIV' /&gt;" FuzzySelectorArgument="&lt;ctrl name='ITR2 Part B - TTI' role='document' /&gt;&lt;ctrl automationid='' role='DIV' /&gt;" Guid="645da058-b6da-45b2-8f45-4e88f0b43d3d" ImageBase64="" InformativeScreenshot="cb6aa3931c4b45258b74598e37cbf574.png" ScopeSelectorArgument="&lt;wnd app='itde-filing-2023.exe' cls='Chrome_WidgetWin_1' title='ITR2 Part B - TTI' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArgument="7." CvType="Text" DesignTimeRectangle="146, 694, 344, 32" ElementType="InputBox" FriendlyName="'7. Gross'" FullSelectorArgument="&lt;ctrl name='ITR2 Part B - TTI' role='document' /&gt;&lt;ctrl idx='33' role='editable text' /&gt;" FuzzySelectorArgument="&lt;ctrl name='ITR2 Part B - TTI' role='document' /&gt;&lt;ctrl automationid='' role='editable text' /&gt;" ImageBase64="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" SearchSteps="Selector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NGetText.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NGetText>
+            <Assign DisplayName="String TaxLiability  Assign" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_45">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[ITTaxLiability]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(ITTaxLiability, "[,₹]", "")]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Int TaxLiability  Assign" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_46">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[IntTaxLiability]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">[CInt(ITTaxLiability)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Check TaxLiability Assign" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_47">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[CheckTaxLiability]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">[Math.Abs(CInt( in_TransactionItem.SpecificContent("TaxLiability")))-Math.Abs(IntTaxLiability)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <If Condition="[Math.Abs(CheckTaxLiability)&gt;10]" DisplayName="TaxLiability If" sap:VirtualizedContainerService.HintSize="510,754.6666666666666" sap2010:WorkflowViewState.IdRef="If_17">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="476,489.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_57">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="TaxLiability Specific Assign" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_48">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Object">[in_TransactionItem.SpecificContent("Status")]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Object">["Tax Liability Mismatch"]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:LogMessage DisplayName="TaxLiability Logs" sap:VirtualizedContainerService.HintSize="434,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[&quot;Taxliability amount mismatch&quot;]" />
+                  <Throw DisplayName="TaxliabilityThrow" Exception="[New BusinessRuleException(&quot;Taxliability amount mismatch&quot;)]" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="300,81.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_58">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+    <ui:LogMessage DisplayName="TL completed Log Message" sap:VirtualizedContainerService.HintSize="530,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Completed Tax liability page validation&quot;]" />
+  </Sequence>
+</Activity>
